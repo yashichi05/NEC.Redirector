@@ -20,9 +20,9 @@ cmd sourceCmd = {
   { 0x7, 0x7, 0x1 }
 };
 cmd targetCmd = {
-  { 0x9, 0xF6, 0x45 },
-  { 0x9, 0xF6, 0x48 },
-  { 0x9, 0xF6, 0x1C },
+  { 0x4, 0xFB, 0x8 },
+  { 0x4, 0xFB, 0x2 },
+  { 0x4, 0xFB, 0x3 },
   { 0x9, 0xF6, 0x10 }
 };
 
@@ -51,7 +51,6 @@ void transformNEC() {
   if (isEqual(gotNEC, emptyCmd) == 0) {
     return;
   } else if (isEqual(gotNEC, sourceCmd.shutdown) == 0) {
-    sendNEC(targetCmd.shutdown);
     sendNEC(targetCmd.shutdown);
   } else if (isEqual(gotNEC, sourceCmd.volUp) == 0) {
     sendNEC(targetCmd.volUp);
